@@ -10,14 +10,11 @@ export class AppController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   login(@Request() req): any {
-    // req.user is from LocalStrategy.validate method from auth/loca-strategy.ts
-    return {... req.user, msg: 'Logged in!'}; 
+    return {... req.user, msg: 'Logged in!'}; // TODO: return JWT access token
   }
 
-  @UseGuards(AuthenticatedGuard)
   @Get('protected')
-  getHello(@Request() req): string {
-    // return this.appService.getHello();
-    return {...req.user, msg: 'you can see this page because of cookie and session. Or you would see 403 Forbidden resource.'}
+  getHello(@Request() req): string { //TODO: require an Bearer token, validate token
+    return req.user 
   }
 }

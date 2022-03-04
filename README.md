@@ -12,8 +12,11 @@ Learn nest.js authentication: JWTs, Sessions and login, following crash course [
 
 ## Usage
 
+### 🎈 Main branch
 session based approch: POST http://localhost:3000/login to recieve cookie session ID, and then GET http://localhost:3000/protected with that session ID so as to access to the protected page.
 
+
+### 🎈 JWT branch
 JWT based approch: tbd
 
 
